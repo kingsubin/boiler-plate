@@ -74,11 +74,11 @@ userSchema.methods.generateToken = function (cb) {
   });
 };
 
-userSchema.methods.findByToken = function (token, cb) {
+userSchema.statics.findByToken = function (token, cb) {
   let user = this;
 
   // 토큰을 decode 한다.
-  jwt.verify(token, "secretTokenm", function (err, decoded) {
+  jwt.verify(token, "secretToekn", function (err, decoded) {
     // 유저아이디를 이용해서 유저를 찾은 후
     // 클라이언트에서 가져온 token과 db에 보관된 토큰이 일치하는지 확인
 
