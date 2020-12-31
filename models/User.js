@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 
+// 에러때문에 따로 추가
+mongoose.set("useCreateIndex", true);
+
 const userSchema = mongoose.Schema({
   name: {
     type: String,
